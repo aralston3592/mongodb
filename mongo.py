@@ -1,7 +1,7 @@
 import pymongo
 import os
 if os.path.exists("env.py"):
-  import env
+    import env
 
 MONGODB_URI = os.getenv("MONGO_URI")
 DBS_NAME = "MyTestDB"
@@ -21,7 +21,8 @@ conn = mongo_connect(MONGODB_URI)
 
 coll = conn[DBS_NAME][COLLECTION_NAME]
 
-coll.update_many({'nationality': 'american'}, {'$set': {'hair_colour': 'maroon'}})
+coll.update_many({'nationality': 'american'}, {'$set':
+                                               {'hair_colour': 'maroon'}})
 
 documents = coll.find({'nationality': 'american'})
 
